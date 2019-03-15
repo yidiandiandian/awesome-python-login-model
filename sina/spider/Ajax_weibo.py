@@ -9,12 +9,12 @@ from time import sleep
 connection = pymysql.connect(host='localhost',
                              port=3306,
                              user='root',
-                             passwd='zkyr1006',
-                             db='python',
+                             passwd='143yy9394',
+                             db='testmysql2',
                              charset='utf8')
 
 cursor = connection.cursor()
-sql = "USE python;"
+sql = "USE testmysql2;"
 cursor.execute(sql)
 connection.commit()
 
@@ -109,12 +109,12 @@ def parse_page(json):
                 continue
             else:
                 item = item.get('mblog')
-                # weibo = {}
-                # weibo['id'] = item.get('id')
-                # weibo['text'] =
-                # weibo['attitudes'] = item.get('attitudes_count')
-                # weibo['comments'] = item.get('comments_count')
-                # weibo['reposts'] = item.get('reposts_count')
+                #weibo = {}
+                #weibo['id'] = item.get('id')
+                #weibo['text'] =
+                #weibo['attitudes'] = item.get('attitudes_count')
+                #weibo['comments'] = item.get('comments_count')
+                #weibo['reposts'] = item.get('reposts_count')
                 weibo = []
                 weibo.append(item.get('id'))
                 weibo.append(pq(item.get('text')).text())
